@@ -235,7 +235,7 @@ body {
   
   .hero-section {
     position: relative;
-    background: url('../imgservice/ser8.gif') no-repeat center center/cover;
+    background: url('ser8.gif') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
