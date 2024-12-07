@@ -1,0 +1,174 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #C1D8C3;
+  color: #333;
+  width: 100%; 
+  margin: 0;
+  padding: 100px 0 20px 0; 
+}
+
+/* Navigation Bar */
+/* Navigation Bar Style */
+.navbar {
+  background-color: #f8f8f8; 
+  padding: 20px 40px; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  border-radius: 0 0 10px 10px; 
+  transition: all 0.3s ease;
+}
+
+/* Style for the logo */
+.logo h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #333333; 
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo a:hover h1 {
+  color: #e4a77b;
+}
+
+/* Style for the navigation links */
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly; 
+  gap: 20px;
+  width: 100%;
+}
+
+/* Navigation link items */
+.topnav li {
+  margin: 0;
+}
+
+/* Style for the navigation links */
+.topnav a {
+  text-decoration: none;
+  color: #5a5a5a; 
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  padding: 12px 20px; 
+  border-radius: 5px; 
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover and active states for links */
+.topnav a.active,
+.topnav a:hover {
+  color: #ffffff; 
+  background-color: #FD8B51; 
+  border-radius: 5px;
+}
+
+  .sides{
+    display: flex;
+    margin-top: 120px;
+  }
+
+.leftside {
+  width: 50%;
+  position: relative;
+  height: 100vh;
+}
+
+.leftside img{
+  position: absolute;
+  right: 0;
+  padding-right: 20px;
+  border: beige dotted;
+  height: 75%;
+  width: 75%
+}
+
+.rightside {
+  height: auto;
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+
+.rightside h1{
+  padding-left: 30px;
+  text-align: start;
+}
+
+.rightside h2{
+  padding-left: 30px;
+  text-align: start;
+  line-height: -10;
+}
+
+.rightside p {
+  padding-left: 30px;
+  text-align: start;
+}
+
+.Wrapper{
+  position: absolute;
+  right: 0;
+  height: 70px;
+  width: 200px;
+  border: #333 solid;
+  border-radius: 13px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+.Wrapper span {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Wrapper span.num{
+  font-size: 50px;
+  border-right: 2px solid rgba(0,0,0,0.2);
+  border-left: 2px solid rgba(0,0,0,0.2);
+
+}
+
+#AddToCart {
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(75, 146, 187);
+  color: white;
+  font-size: 3.0em;
+  border: solid rgb(105, 146, 207);
+  cursor: pointer;
+  margin: 100px;
+  width: 60%;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
