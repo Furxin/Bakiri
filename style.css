@@ -85,7 +85,7 @@ body {
   .hero-section {
     position: relative;
     height: 90vh; 
-    background-image: url('../imghome/homebg.jpg');
+    background-image: url('homebg.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
