@@ -210,7 +210,7 @@ h2 {
 
 .menu-item button {
   padding: 10px 15px;
-  background-color: #466378;
+  background-color: #244c66;
   color: white;
   border: none;
   border-radius: 5px;
@@ -224,7 +224,7 @@ h2 {
 }
 
 .menu-item button:hover {
-  background-color: #555;
+  background-color: #8aa0ae;
 }
 
 #cart-count {
