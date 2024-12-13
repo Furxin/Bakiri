@@ -5,7 +5,7 @@ html, body {
 }
 
 .main-content {
-    min-height: calc(100vh - 180px); /* Adjust to account for footer and other fixed sections */
+    min-height: calc(100vh - 180px); 
     padding-bottom: 100px; /* Add space below content */
     margin-top: 80px; /* Ensure content doesn't get hidden under the fixed navbar */
 }
