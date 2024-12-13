@@ -18,27 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let slideIndex = 0;
 
-function showSlides() {
-  const slides = document.getElementsByClassName("slides");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  function showSlides() {
+    const slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    for (let i = slideIndex; i < slideIndex + 4; i++) {
+      slides[i % slides.length].style.display = "block";
+    }
+
+    slideIndex = (slideIndex + 4) % slides.length;
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
   }
 
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
-  
-  for (let i = slideIndex - 1; i < slideIndex + 1; i++) {
-    slides[i % slides.length].style.display = "block";
-  }
-
-  setTimeout(showSlides, 3000); // Change image every 3 seconds
-}
-
-showSlides();
+  showSlides();
 
 // Toggle function for showing and hiding the review images
-
-/* function toggleReviews() {
+function toggleReviews() {
     var reviewsContent = document.getElementById("reviewsContent");
     if (reviewsContent.style.display === "none" || reviewsContent.style.display === "") {
       reviewsContent.style.display = "block";
@@ -47,7 +44,7 @@ showSlides();
     }
   }
   'use strict';
-*/
+
 
 
 /**
