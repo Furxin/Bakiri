@@ -7,7 +7,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href='https://fonts.googleapis.com/css?family=Fauna One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,7 +24,7 @@
 
       <!-- Navigation Links -->
       <ul class="topnav">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="services.html">Services</a></li>
@@ -52,56 +53,50 @@
     </div>
 
     <!-- Slideshow Gallery -->
-    <div class="specialties-gallery">
-      <div class="specialty-item">
-        <div class="slideshow-container">
-          <div class="slides fade">
-            <img src="cinammonrolls.png" alt="Cinnamon Rolls">
-            <div class="description">
-              <h3>Cinnamon Rolls</h3>
-              <p>Soft, warm, and topped with a sweet glaze.</p>
-            </div>
-        </div>
-        <div class="slides fade">
-          <img src="chococake.png" alt="Chocolate Cake">
-          <div class="description">
-            <h3>Chocolate Cake</h3>
-            <p>Rich and decadent, perfect for every occasion.</p>
-          </div>
-        </div>
-        <div class="slides fade">
-          <img src="croissant.png" alt="Croissants">
-          <div class="description">
-            <h3>Fresh Croissants</h3>
-            <p>Crispy, buttery, and always fresh out of the oven.</p>
-          </div>
-        </div>
-        <div class="slides fade">
-          <img src="applepie.png" alt="Apple Pie">
-          <div class="description">
-            <h3>Apple Pie</h3>
-            <p>Delicious and buttery with a hint of cinnamon.</p>
-          </div>
-        </div>
-        <div class="slides fade">
-          <img src="donuts.png" alt="Donuts">
-          <div class="description">
-            <h3>Fresh Donuts</h3>
-            <p>Soft, fluffy, and covered in powdered sugar.</p>
-          </div>
-        </div>
-        <div class="slides fade">
-          <img src="muffin.png" alt="Muffins">
-          <div class="description">
-            <h3>Blueberry Muffins</h3>
-            <p>Moist, fruity, and perfectly baked.</p>
-          </div>
-        </div>
+<div class="specialties-gallery">
+    <div class="slides">
+      <img src="cinammonrolls.png" alt="Cinnamon Rolls">
+      <div class="description">
+        <h3>Cinnamon Rolls</h3>
+        <p>Soft, warm, and topped with a sweet glaze.</p>
+      </div>
+    </div>
+    <div class="slides">
+      <img src="chococake.png" alt="Chocolate Cake">
+      <div class="description">
+        <h3>Chocolate Cake</h3>
+        <p>Rich and decadent, perfect for every occasion.</p>
+      </div>
+    </div>
+    <div class="slides">
+      <img src="croissant.png" alt="Croissants">
+      <div class="description">
+        <h3>Fresh Croissants</h3>
+        <p>Crispy, buttery, and always fresh out of the oven.</p>
+      </div>
+    </div>
+    <div class="slides">
+      <img src="applepie.png" alt="Apple Pie">
+      <div class="description">
+        <h3>Apple Pie</h3>
+        <p>Delicious and buttery with a hint of cinnamon.</p>
+      </div>
+    </div>
+    <div class="slides">
+      <img src="donuts.png" alt="Donuts">
+      <div class="description">
+        <h3>Fresh Donuts</h3>
+        <p>Soft, fluffy, and covered in powdered sugar.</p>
+      </div>
+    </div>
+    <div class="slides">
+      <img src="muffin.png" alt="Muffins">
+      <div class="description">
+        <h3>Blueberry Muffins</h3>
+        <p>Moist, fruity, and perfectly baked.</p>
+      </div>
     </div>
   </div>
-</div>
-</section>
-
 <!-- Reviews Section -->
 <section class="reviews">
     <div class="section-title">
@@ -109,9 +104,9 @@
       <p>See what our happy customers have to say about us!</p>
     </div>
   
-    <!-- <button class="reviews-button" onclick="toggleReviews()">Reviews</button> -->
+    <button class="reviews-button" onclick="toggleReviews()">Reviews</button>
   
-
+    <div class="reviews-content" id="reviewsContent">
       <div class="review-images">
         <img src="review1.png" alt="Customer 1" class="review-image">
         <img src="review2.png" alt="Customer 2" class="review-image">
@@ -120,7 +115,7 @@
         <img src="review5.png" alt="Customer 5" class="review-image">
         <img src="review6.png" alt="Customer 6" class="review-image">
       </div>
-
+    </div>
   </section>
 
  <!-- Footer Section -->
@@ -151,7 +146,7 @@
     <div class="quick-links">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="services.html">Services</a></li>
@@ -175,4 +170,3 @@
   <script src="home.js"></script>
 </body>
 </html>
-home
