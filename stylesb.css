@@ -5,20 +5,25 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  background-color: #C1D8C3;
-  color: #333;
-  width: 100%; 
-  margin: 0;
-  padding: 100px 0 20px 0; 
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margin */
 }
 
-/* Navigation Bar */
-/* Navigation Bar Style */
+.main-content {
+    min-height: calc(100vh - 180px); /* Subtract the height of the footer and any other fixed sections */
+    padding-bottom: 100px; /* Add some space below the content to avoid being too tight with the footer */
+}
+
+  header {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Navigation Bar Style */
 .navbar {
-  background-color: #f8f8f8; 
+  background-color: #e9963c; 
   padding: 20px 40px; 
   display: flex;
   justify-content: space-between; 
@@ -35,10 +40,10 @@ body {
 /* Style for the logo */
 .logo h1 {
   margin: 0;
-  font-size: 1.8em;
-  color: #333333; 
-  font-family: 'Playfair Display', serif;
-  font-weight: normal;
+  font-size: 1.9 em;
+  color: #272e22; 
+  font-family: 'Cinzel Decorative';
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
@@ -69,10 +74,11 @@ body {
 /* Style for the navigation links */
 .topnav a {
   text-decoration: none;
-  color: #5a5a5a; 
+  color: #272e22; 
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fauna One';
   text-transform: uppercase;
+  font-weight: bolder;
   padding: 12px 20px; 
   border-radius: 5px; 
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -82,10 +88,9 @@ body {
 .topnav a.active,
 .topnav a:hover {
   color: #ffffff; 
-  background-color: #FD8B51; 
+  background-color: #76889d; 
   border-radius: 5px;
 }
-
 /* Title Styling for Our Menu */
 .menu-title {
   text-align: center;
@@ -107,7 +112,7 @@ body {
   top: 50%;
   width: 40%;
   height: 1px;
-  background-color: #524d7f;
+  background-color: #76889d;
   transform: translateY(-50%);
 }
 
@@ -121,7 +126,7 @@ body {
 
 /* Menu Navigation */
 .menu-nav {
-  background-color: #90AACB;
+  background-color: #a4b5c5;
   padding: 10px 0;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -142,7 +147,7 @@ body {
 }
 
 .menu-nav ul li a {
-  color: white;
+  color: #272e22;
   text-decoration: none;
   font-size: 1.2em;
   padding: 10px 20px;
@@ -151,7 +156,7 @@ body {
 }
 
 .menu-nav ul li a:hover {
-  background-color: #466378;
+  background-color: #76889d;
   color: #ffffff;
 }
 
