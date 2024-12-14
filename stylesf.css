@@ -1,139 +1,96 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* General Layout and Body Styling */
+    body {
+      font-family: 'Fauna One', serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #F4F4F4;
+    }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-}
+    /* Navbar Styling */
+    header {
+      width: 100%;
+      background-color: #f8be49;
+      padding: 10px;
+      color: white;
+      font-family: 'Cinzel Decorative', serif;
+      text-align: center;
+    }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f8be49;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
+    header .bakery-name {
+      font-size: 2.5rem;
+    }
 
-.back-button {
-  background-color: #e9963c;
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-weight: bold;
-}
+    /* Product Container */
+    .product-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
 
-.back-button:hover {
-  background-color: #a4b5c5;
-}
+    .product-image img {
+      width: 300px;
+      height: auto;
+      margin-right: 20px;
+    }
 
-.bakery-name {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 24px;
-  color: #272e22;
-  text-align: center;
-  flex-grow: 1;
-}
+    .product-details {
+      max-width: 400px;
+      text-align: center;
+      font-family: 'Fauna One', serif;
+    }
 
-.spacer {
-  width: 100px; /* Ensures alignment for the centered title */
-}
+    .product-title {
+      font-size: 2rem;
+      font-family: 'Cinzel Decorative', serif;
+      margin-bottom: 10px;
+    }
 
-/* Main Content */
-.product-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 100px auto 50px;
-  max-width: 1000px;
-  gap: 30px;
-}
+    .product-price {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
 
-.product-image img {
-  width: 300px;
-  height: auto;
-  border: 3px solid #f8be49;
-  border-radius: 10px;
-}
+    /* Toggle Content */
+    .toggle-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin: 10px 0;
+    }
 
-.product-details {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1;
-}
+    .toggle-content {
+      font-size: 1rem;
+      display: none;
+      margin-bottom: 15px;
+      padding-left: 20px;
+      text-align: left;
+    }
 
-.product-title {
-  font-size: 28px;
-  font-weight: 600;
-}
+    #AddToCart {
+      background-color: #f8be49;
+      color: white;
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      font-family: 'Cinzel Decorative', serif;
+    }
 
-.product-price {
-  font-size: 20px;
-  font-weight: 600;
-  color: #76889d;
-}
+    #AddToCart:hover {
+      background-color: #e9963c;
+    }
 
-.description, .ingredients {
-  border-top: 1px solid #ccc;
-  padding: 10px 0;
-}
-
-.toggle-title {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.toggle-content {
-  font-size: 14px;
-  display: none; /* Hidden by default */
-  transition: all 0.3s ease;
-  color: #555;
-  margin-top: 5px;
-}
-
-
-/* Add to Cart Button */
-#AddToCart {
-  background-color: #76889d;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-#AddToCart:hover {
-  background-color: #272e22;
-}
-
-/* Footer */
-footer {
-  background-color: #76889d;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  font-weight: bold;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.modal {
+    /* Modal Styling */
+    .modal {
       display: none;
       position: fixed;
       z-index: 1;
@@ -141,30 +98,28 @@ footer {
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.4);
-      padding-top: 60px;
+      background-color: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+      font-family: 'Fauna One', serif;
     }
 
     .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      padding: 20px;
-      border: 1px solid #888;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
       width: 80%;
       max-width: 400px;
-      border-radius: 10px;
+      text-align: center;
     }
 
     .modal-header {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-family: 'Cinzel Decorative', serif;
     }
 
     .modal-body {
-      text-align: center;
+      margin-top: 15px;
     }
 
     .quantity-controls {
@@ -174,13 +129,13 @@ footer {
     }
 
     .quantity-btn {
-      font-size: 24px;
+      font-size: 2rem;
       padding: 10px 20px;
-      margin: 0 10px;
       cursor: pointer;
       background-color: #f8be49;
       border: none;
       border-radius: 5px;
+      margin: 0 10px;
     }
 
     .quantity-btn:hover {
@@ -188,14 +143,13 @@ footer {
     }
 
     .quantity-display {
-      font-size: 24px;
-      padding: 10px;
+      font-size: 2rem;
       width: 50px;
       text-align: center;
+      border: none;
+      background-color: #f4f4f4;
     }
 
     .modal-footer {
-      text-align: center;
       margin-top: 20px;
     }
-
