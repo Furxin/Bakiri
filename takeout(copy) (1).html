@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deniel's Bakery Shop</title>
-
+  
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Fauna+One&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet'>
 
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="stylesf.css">
 </head>
 <body>
-
   <!-- Navbar Section -->
   <header class="navbar">
     <a href="menu.html" class="back-button">&lt; Back to Menu</a>
@@ -23,51 +22,40 @@
 
   <!-- Main Content Section -->
   <main class="product-container">
+    <!-- Left Side: Product Image -->
     <div class="product-image">
       <img src="cake1.png" alt="Chocolate Cake">
     </div>
 
+    <!-- Right Side: Product Details -->
     <div class="product-details">
       <h2 class="product-title">CHOCOLATE CAKE</h2>
       <p class="product-price">₱250</p>
-
-      <!-- Toggle Description -->
+      
       <h3 class="toggle-title">Description +</h3>
       <p class="toggle-content" style="display: none;">
         This is a delicious chocolate cake with rich frosting.
       </p>
 
-      <!-- Toggle Ingredients -->
       <h3 class="toggle-title">Ingredients +</h3>
       <p class="toggle-content" style="display: none;">
         Flour, eggs, cocoa powder, sugar, butter, and chocolate frosting.
       </p>
 
-      <!-- Add to Cart Button -->
       <button id="AddToCart">+ Add to Cart</button>
     </div>
   </main>
 
-  <!-- Modal Section (initially hidden) -->
+  <!-- Modal for Order -->
   <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h2>Order Details</h2>
-
-      <div class="quantity-control">
-        <button id="decreaseQuantity">-</button>
-        <span id="quantityDisplay">1</span>
-        <button id="increaseQuantity">+</button>
-      </div>
-
+      <span class="close">&times;</span>
+      <h2>Enter Pickup Information</h2>
       <label for="pickupDate">Pickup Date:</label>
-      <input type="date" id="pickupDate" />
-
+      <input type="date" id="pickupDate">
       <label for="pickupTime">Pickup Time:</label>
-      <input type="time" id="pickupTime" min="09:00" max="18:00" />
-
-      <!-- Submit Order Button -->
-      <button id="submitOrder">Submit Order</button>
+      <input type="time" id="pickupTime">
+      <button id="submitOrder" class="submit-btn">Submit Order</button>
     </div>
   </div>
 
@@ -78,7 +66,6 @@
 
   <!-- Add JavaScript -->
   <script src="scriptf.js"></script>
-
 </body>
 </html>
 
