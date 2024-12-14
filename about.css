@@ -1,87 +1,93 @@
-body {
+html, body {
   font-family:'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
   color: #333;
-
+ height: 100%;
   background-color: #ffffff;
 }
-header {
+   
+.main-content {
+    min-height: calc(100vh - 180px); /* Subtract the height of the footer and any other fixed sections */
+    padding-bottom: 100px; /* Add some space below the content to avoid being too tight with the footer */
+}
+
+  header {
     margin: 0;
     padding: 0;
-}
+  }
 
-/* Navigation Bar Style */
+  /* Navigation Bar Style */
 .navbar {
-    background-color: #e9963c;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 10px 10px;
-    transition: all 0.3s ease;
+  background-color: #e9963c; 
+  padding: 20px 40px; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  border-radius: 0 0 10px 10px; 
+  transition: all 0.3s ease;
 }
 
-/* Logo Style */
+/* Style for the logo */
 .logo h1 {
-    margin: 0;
-    font-size: 1.9em;
-    color: #272e22;
-    font-family: 'Cinzel Decorative';
-    font-weight: bold;
-    transition: color 0.3s ease;
+  margin: 0;
+  font-size: 1.9 em;
+  color: #272e22; 
+  font-family: 'Cinzel Decorative';
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .logo a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .logo a:hover h1 {
-    color: #e4a77b;
+  color: #e4a77b;
 }
 
-/* Navigation Links Style */
+/* Style for the navigation links */
 .topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly; 
+  gap: 20px;
+  width: 100%;
 }
 
-/* Navigation Link Items */
+/* Navigation link items */
 .topnav li {
-    margin: 0;
+  margin: 0;
 }
 
-/* Navigation Link Style */
+/* Style for the navigation links */
 .topnav a {
-    text-decoration: none;
-    color: #272e22;
-    font-weight: 600;
-    font-family: 'Fauna One';
-    text-transform: uppercase;
-    font-weight: bolder;
-    padding: 12px 20px;
-    border-radius: 5px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  color: #272e22; 
+  font-weight: 600;
+  font-family: 'Fauna One';
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: 12px 20px; 
+  border-radius: 5px; 
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover and Active States for Links */
+/* Hover and active states for links */
 .topnav a.active,
 .topnav a:hover {
-    color: #ffffff;
-    background-color: #76889d;
-    border-radius: 5px;
+  color: #ffffff; 
+  background-color: #76889d; 
+  border-radius: 5px;
 }
-
+  
 .header-banner img {
   width: 100%;
   height: 500px;
