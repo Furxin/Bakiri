@@ -56,13 +56,13 @@ header .bakery-name {
 
 /* Product image */
 .product-image {
-  width: 50%;
+  width: 40%; /* Reduce the width of the image container */
   padding-right: 20px;
 }
 
 .product-image img {
   width: 100%;
-  height: auto;
+  height: auto; /* Maintain the aspect ratio */
   border: 5px solid #f8be49; /* Border color from palette */
   border-radius: 10px;
 }
