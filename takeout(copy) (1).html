@@ -6,8 +6,8 @@
   <title>Deniel's Bakery Shop</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Fauna+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Fauna+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="stylesf.css">
@@ -23,50 +23,50 @@
 
   <!-- Main Content Section -->
   <main class="product-container">
-    <!-- Left Side: Product Image -->
     <div class="product-image">
-      <img src="cake1.png" alt="Chocolate Cake" />
+      <img src="cake1.png" alt="Chocolate Cake">
     </div>
 
-    <!-- Right Side: Product Details -->
     <div class="product-details">
       <h2 class="product-title">CHOCOLATE CAKE</h2>
       <p class="product-price">₱250</p>
 
+      <!-- Toggle Description -->
       <h3 class="toggle-title">Description +</h3>
       <p class="toggle-content" style="display: none;">
         This is a delicious chocolate cake with rich frosting.
       </p>
 
+      <!-- Toggle Ingredients -->
       <h3 class="toggle-title">Ingredients +</h3>
       <p class="toggle-content" style="display: none;">
         Flour, eggs, cocoa powder, sugar, butter, and chocolate frosting.
       </p>
 
+      <!-- Add to Cart Button -->
       <button id="AddToCart">+ Add to Cart</button>
     </div>
   </main>
 
-  <!-- Modal for Order Details -->
+  <!-- Modal Section (initially hidden) -->
   <div id="modal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
-        <h2>Order Details</h2>
+      <span class="close-btn">&times;</span>
+      <h2>Order Details</h2>
+
+      <div class="quantity-control">
+        <button id="decreaseQuantity">-</button>
+        <span id="quantityDisplay">1</span>
+        <button id="increaseQuantity">+</button>
       </div>
-      <div class="modal-body">
-        <p>Choose your pickup date and time:</p>
-        <input type="date" id="pickupDate" />
-        <input type="time" id="pickupTime" />
-        <p>Quantity:</p>
-        <div class="quantity-controls">
-          <button class="quantity-btn" id="decreaseQuantity">-</button>
-          <div class="quantity-display" id="quantityDisplay">1</div>
-          <button class="quantity-btn" id="increaseQuantity">+</button>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button id="submitOrder">Submit Order</button>
-      </div>
+
+      <label for="pickupDate">Pickup Date:</label>
+      <input type="date" id="pickupDate" />
+
+      <label for="pickupTime">Pickup Time:</label>
+      <input type="time" id="pickupTime" />
+
+      <button id="submitOrder">Submit Order</button>
     </div>
   </div>
 
@@ -77,6 +77,8 @@
 
   <!-- Add JavaScript -->
   <script src="scriptf.js"></script>
+
 </body>
 </html>
+
 
