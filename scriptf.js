@@ -15,44 +15,62 @@ toggleTitles.forEach(title => {
   });
 });
 
-// Modal related
-const modal = document.getElementById("modal");
-const addToCartButton = document.getElementById("AddToCart");
-const closeModal = document.querySelector(".close");
+// Function to toggle the modal
+const addToCartButton = document.getElementById('AddToCart');
+const modal = document.getElementById('orderModal');
+const closeButton = document.getElementById('submitOrder');
 
-addToCartButton.addEventListener("click", () => {
-  modal.style.display = "flex"; // Open the modal when Add to Cart is clicked
+// Show the modal when 'Add to Cart' is clicked
+addToCartButton.addEventListener('click', function() {
+  modal.style.display = 'block'; // Show modal
 });
 
-// Close the modal when the close button is clicked
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none"; // Close the modal
-});
-
-// Submit Order Button Functionality
-const submitOrderButton = document.getElementById('submitOrder');
-
-submitOrderButton.addEventListener('click', () => {
-  const pickupDate = document.getElementById('pickupDate').value;
+// Hide the modal when 'Submit Order' is clicked
+closeButton.addEventListener('click', function() {
   const pickupTime = document.getElementById('pickupTime').value;
-  
-  // Validate if pickup time is within 6 AM and 9 PM
-  const hours = parseInt(pickupTime.split(":")[0]);
-  if (hours < 6 || hours > 21) {
-    alert("Pickup time must be between 6:00 AM and 9:00 PM.");
-    return; // Prevent order submission if time is invalid
+  const quantity = document.getElementById('quantity').value;
+
+  if (!pickupTime) {
+    alert('Please select a valid pick-up time!');
+    return;
   }
 
-  const orderNumber = Math.floor(Math.random() * 900000) + 100000;  // Generate a 6-digit random number
-  const totalAmount = 250;  // Assuming ₱250 per cake
-  
-  const receipt = `Receipt:
-  Order Number: ${orderNumber}
-  Pickup Date: ${pickupDate}
-  Pickup Time: ${pickupTime}
-  Quantity: 1
-  Total Amount: ₱${totalAmount}`;
+  const orderNumber = Math.floor(Math.random() * 1000000); // 6-digit order number
+  const totalPrice = quantity * 250; // Price calculation
 
-  alert(receipt); // Show the receipt as an alert
-  modal.style.display = 'none'; // Close the modal after order submission
+  // Display receipt
+  alert(`
+    Order Number: ${orderNumber}
+    Quantity: ${quantity}
+    Pick-up Time: ${pickupTime}
+    Total: ₱${totalPrice}
+  `);
+
+  modal.style.display = 'none'; // Close modal after submission
+});
+
+// Quantity control functionality
+const increaseButton = document.getElementById('increase');
+const decreaseButton = document.getElementById('decrease');
+const quantityInput = document.getElementById('quantity');
+
+// Increase quantity
+increaseButton.addEventListener('click', function() {
+  let quantity = parseInt(quantityInput.value);
+  quantityInput.value = quantity + 1;
+});
+
+// Decrease quantity
+decreaseButton.addEventListener('click', function() {
+  let quantity = parseInt(quantityInput.value);
+  if (quantity > 1) {
+    quantityInput.value = quantity - 1;
+  }
+});
+
+// Close modal if clicked outside (optional)
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
 });
