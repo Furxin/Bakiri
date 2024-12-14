@@ -1,155 +1,208 @@
-  /* General Layout and Body Styling */
-    body {
-      font-family: 'Fauna One', serif;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #F4F4F4;
-    }
+/* General Layout and Body Styling */
+body {
+  font-family: 'Fauna One', serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F4F4;
+}
 
-    /* Navbar Styling */
-    header {
-      width: 100%;
-      background-color: #f8be49;
-      padding: 10px;
-      color: white;
-      font-family: 'Cinzel Decorative', serif;
-      text-align: center;
-    }
+/* Navbar Styling */
+header {
+  width: 100%;
+  background-color: #f8be49;
+  padding: 10px;
+  color: white;
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
 
-    header .bakery-name {
-      font-size: 2.5rem;
-    }
+header .bakery-name {
+  font-size: 2.5rem;
+}
 
-    /* Product Container */
-    .product-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
-    }
+header .back-button {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #e9963c;
+  border-radius: 5px;
+}
 
-    .product-image img {
-      width: 300px;
-      height: auto;
-      margin-right: 20px;
-    }
+header .back-button:hover {
+  background-color: #a4b5c5;
+}
 
-    .product-details {
-      max-width: 400px;
-      text-align: center;
-      font-family: 'Fauna One', serif;
-    }
+/* Main Content Section */
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 20px;
+}
 
-    .product-title {
-      font-size: 2rem;
-      font-family: 'Cinzel Decorative', serif;
-      margin-bottom: 10px;
-    }
+.product-image img {
+  width: 300px;
+  height: auto;
+  margin-right: 20px;
+}
 
-    .product-price {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
+.product-details {
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Fauna One', serif;
+}
 
-    /* Toggle Content */
-    .toggle-title {
-      font-family: 'Cinzel Decorative', serif;
-      font-size: 1.2rem;
-      cursor: pointer;
-      margin: 10px 0;
-    }
+.product-title {
+  font-size: 2rem;
+  font-family: 'Cinzel Decorative', serif;
+  margin-bottom: 10px;
+}
 
-    .toggle-content {
-      font-size: 1rem;
-      display: none;
-      margin-bottom: 15px;
-      padding-left: 20px;
-      text-align: left;
-    }
+.product-price {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
 
-    #AddToCart {
-      background-color: #f8be49;
-      color: white;
-      font-size: 1.5rem;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      width: 100%;
-      font-family: 'Cinzel Decorative', serif;
-    }
+/* Toggle Content (Description + Ingredients) */
+.toggle-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 10px 0;
+}
 
-    #AddToCart:hover {
-      background-color: #e9963c;
-    }
+.toggle-content {
+  font-size: 1rem;
+  display: none;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  text-align: left;
+}
 
-    /* Modal Styling */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-      justify-content: center;
-      align-items: center;
-      font-family: 'Fauna One', serif;
-    }
+/* Add to Cart Button */
+#AddToCart {
+  background-color: #f8be49;
+  color: white;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  font-family: 'Cinzel Decorative', serif;
+}
 
-    .modal-content {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 400px;
-      text-align: center;
-    }
+#AddToCart:hover {
+  background-color: #e9963c;
+}
 
-    .modal-header {
-      font-size: 1.5rem;
-      font-family: 'Cinzel Decorative', serif;
-    }
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  font-family: 'Fauna One', serif;
+}
 
-    .modal-body {
-      margin-top: 15px;
-    }
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
 
-    .quantity-controls {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+.modal-header {
+  font-size: 1.5rem;
+  font-family: 'Cinzel Decorative', serif;
+}
 
-    .quantity-btn {
-      font-size: 2rem;
-      padding: 10px 20px;
-      cursor: pointer;
-      background-color: #f8be49;
-      border: none;
-      border-radius: 5px;
-      margin: 0 10px;
-    }
+.modal-body {
+  margin-top: 15px;
+}
 
-    .quantity-btn:hover {
-      background-color: #e9963c;
-    }
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-    .quantity-display {
-      font-size: 2rem;
-      width: 50px;
-      text-align: center;
-      border: none;
-      background-color: #f4f4f4;
-    }
+.quantity-btn {
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f8be49;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+}
 
-    .modal-footer {
-      margin-top: 20px;
-    }
+.quantity-btn:hover {
+  background-color: #e9963c;
+}
+
+.quantity-display {
+  font-size: 2rem;
+  width: 50px;
+  text-align: center;
+  border: none;
+  background-color: #f4f4f4;
+}
+
+.modal-footer {
+  margin-top: 20px;
+}
+
+/* Footer Styling */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #272e22;
+  color: white;
+  font-family: 'Fauna One', serif;
+  margin-top: 20px;
+}
+
+footer p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+  }
+
+  .product-image img {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .product-details {
+    width: 100%;
+  }
+}
+
