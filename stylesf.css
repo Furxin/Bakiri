@@ -57,6 +57,7 @@ body {
   justify-content: space-between;
   margin-top: 100px; /* To offset from navbar */
   padding: 20px;
+  background-color: #fff; /* Main content background set to white */
 }
 
 /* Left Side: Product Image */
@@ -67,11 +68,15 @@ body {
   border-radius: 15px;
   margin-right: 20px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .product-image img {
   max-width: 100%;
   border-radius: 15px;
+  border: 2px solid #f8be49; /* The image itself now has a border */
+  padding: 5px; /* Ensure padding is inside the border */
+  box-sizing: border-box; /* Ensures padding doesn't push border out */
 }
 
 /* Right Side: Product Details */
