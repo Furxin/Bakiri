@@ -1,99 +1,65 @@
-// Get the modal and button elements
-const modal = document.getElementById('modal');
-const addToCartBtn = document.getElementById('AddToCart');
-const closeBtn = document.querySelector('.modal-footer button'); // Close button inside modal
-const decreaseBtn = document.getElementById('decreaseQuantity');
-const increaseBtn = document.getElementById('increaseQuantity');
-const quantityDisplay = document.getElementById('quantityDisplay');
-const pickupDateInput = document.getElementById('pickupDate');
-const pickupTimeInput = document.getElementById('pickupTime');
-const submitOrderBtn = document.getElementById('submitOrder');
-
-// Initialize quantity and product price
-let quantity = 1;
-const productPrice = 250; // Price for the chocolate cake (₱250)
-
-// Toggle function for Description and Ingredients
-const toggleSections = document.querySelectorAll('.toggle-title');
-
-toggleSections.forEach(title => {
-  title.addEventListener('click', () => {
-    // Find the next sibling element (toggle-content)
+// Toggle function for Description and Ingredients sections
+document.querySelectorAll('.toggle-title').forEach(title => {
+  title.addEventListener('click', function () {
     const content = title.nextElementSibling;
-
-    // Toggle the 'active' class and show/hide content
-    if (content.style.display === 'block') {
-      content.style.display = 'none';
-    } else {
+    if (content.style.display === 'none') {
       content.style.display = 'block';
+    } else {
+      content.style.display = 'none';
     }
   });
 });
 
-// Show modal when "Add to Cart" is clicked
-addToCartBtn.addEventListener('click', function() {
-  modal.style.display = 'flex'; // Display modal
+// Handle Add to Cart button click to show the modal
+const addToCartButton = document.getElementById('AddToCart');
+const modal = document.getElementById('modal');
+const closeBtn = document.querySelector('.close-btn');
+
+// Open modal when "Add to Cart" is clicked
+addToCartButton.addEventListener('click', () => {
+  modal.style.display = 'flex';
 });
 
-// Close the modal when close button is clicked
-closeBtn.addEventListener('click', function() {
-  modal.style.display = 'none'; // Hide modal
+// Close modal when close button is clicked
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
 
-// Close the modal if the user clicks outside of the modal content
-window.addEventListener('click', function(event) {
-  if (event.target === modal) {
-    modal.style.display = 'none'; // Hide modal if clicked outside
-  }
+// Handle quantity increase and decrease
+let quantity = 1;
+const quantityDisplay = document.getElementById('quantityDisplay');
+const increaseQuantity = document.getElementById('increaseQuantity');
+const decreaseQuantity = document.getElementById('decreaseQuantity');
+
+increaseQuantity.addEventListener('click', () => {
+  quantity++;
+  quantityDisplay.textContent = quantity;
 });
 
-// Adjust quantity
-decreaseBtn.addEventListener('click', function() {
+decreaseQuantity.addEventListener('click', () => {
   if (quantity > 1) {
     quantity--;
     quantityDisplay.textContent = quantity;
   }
 });
 
-increaseBtn.addEventListener('click', function() {
-  quantity++;
-  quantityDisplay.textContent = quantity;
-});
+// Handle the submission of the order (displaying a receipt)
+const submitOrderButton = document.getElementById('submitOrder');
 
-// Handle order submission
-submitOrderBtn.addEventListener('click', function() {
-  const pickupDate = pickupDateInput.value;
-  const pickupTime = pickupTimeInput.value;
+submitOrderButton.addEventListener('click', () => {
+  const pickupDate = document.getElementById('pickupDate').value;
+  const pickupTime = document.getElementById('pickupTime').value;
+  const orderNumber = Math.floor(Math.random() * 900000) + 100000;  // Generate a 6-digit random number
+  const totalAmount = quantity * 250;  // Assuming ₱250 per cake
   
-  // Check if date and time are provided
-  if (!pickupDate || !pickupTime) {
-    alert('Please select a pickup date and time.');
-    return;
-  }
+  const receipt = `Receipt:
+  Order Number: ${orderNumber}
+  Pickup Date: ${pickupDate}
+  Pickup Time: ${pickupTime}
+  Quantity: ${quantity}
+  Total Amount: ₱${totalAmount}`;
 
-  // Generate a random order number
-  const orderNumber = Math.floor(100000 + Math.random() * 900000); // 6-digit random order number
-
-  // Calculate the total amount
-  const totalAmount = productPrice * quantity;
-
-  // Generate the receipt
-  const receipt = `
-    <div style="font-family: 'Fauna One', serif; padding: 20px; border: 2px solid #f8be49; max-width: 400px; margin: 20px auto; text-align: center;">
-      <h2>Order Receipt</h2>
-      <p><strong>Order Number:</strong> #${orderNumber}</p>
-      <p><strong>Product:</strong> Chocolate Cake</p>
-      <p><strong>Quantity:</strong> ${quantity}</p>
-      <p><strong>Pickup Date:</strong> ${pickupDate}</p>
-      <p><strong>Pickup Time:</strong> ${pickupTime}</p>
-      <p><strong>Total Amount:</strong> ₱${totalAmount}</p>
-    </div>
-  `;
-
-  // Display the receipt (you can append it to the body or display in another way)
-  document.body.innerHTML += receipt;
-
-  // Hide the modal after order submission
-  modal.style.display = 'none';
+  alert(receipt); // Show the receipt as an alert
+  modal.style.display = 'none'; // Close the modal after order submission
 });
 
