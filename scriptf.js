@@ -49,6 +49,14 @@ const submitOrderButton = document.getElementById('submitOrder');
 submitOrderButton.addEventListener('click', () => {
   const pickupDate = document.getElementById('pickupDate').value;
   const pickupTime = document.getElementById('pickupTime').value;
+  
+  // Validate if pickup time is within 9 AM and 6 PM
+  const hours = parseInt(pickupTime.split(":")[0]);
+  if (hours < 9 || hours > 18) {
+    alert("Pickup time must be between 9:00 AM and 6:00 PM.");
+    return; // Prevent order submission if time is invalid
+  }
+
   const orderNumber = Math.floor(Math.random() * 900000) + 100000;  // Generate a 6-digit random number
   const totalAmount = quantity * 250;  // Assuming ₱250 per cake
   
@@ -62,4 +70,3 @@ submitOrderButton.addEventListener('click', () => {
   alert(receipt); // Show the receipt as an alert
   modal.style.display = 'none'; // Close the modal after order submission
 });
-
