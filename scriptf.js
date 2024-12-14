@@ -15,62 +15,75 @@ toggleTitles.forEach(title => {
   });
 });
 
-// Function to toggle the modal
-const addToCartButton = document.getElementById('AddToCart');
+// Open and Close Modal
+const openModalBtn = document.getElementById('AddToCart');
 const modal = document.getElementById('orderModal');
-const closeButton = document.getElementById('submitOrder');
+const closeModalBtn = document.getElementById('closeModal');
 
-// Show the modal when 'Add to Cart' is clicked
-addToCartButton.addEventListener('click', function() {
-  modal.style.display = 'block'; // Show modal
+// Open the modal
+openModalBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
 });
 
-// Hide the modal when 'Submit Order' is clicked
-closeButton.addEventListener('click', function() {
-  const pickupTime = document.getElementById('pickupTime').value;
-  const quantity = document.getElementById('quantity').value;
-
-  if (!pickupTime) {
-    alert('Please select a valid pick-up time!');
-    return;
-  }
-
-  const orderNumber = Math.floor(Math.random() * 1000000); // 6-digit order number
-  const totalPrice = quantity * 250; // Price calculation
-
-  // Display receipt
-  alert(`
-    Order Number: ${orderNumber}
-    Quantity: ${quantity}
-    Pick-up Time: ${pickupTime}
-    Total: ₱${totalPrice}
-  `);
-
-  modal.style.display = 'none'; // Close modal after submission
+// Close the modal
+closeModalBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
 
-// Quantity control functionality
-const increaseButton = document.getElementById('increase');
-const decreaseButton = document.getElementById('decrease');
-const quantityInput = document.getElementById('quantity');
-
-// Increase quantity
-increaseButton.addEventListener('click', function() {
-  let quantity = parseInt(quantityInput.value);
-  quantityInput.value = quantity + 1;
-});
-
-// Decrease quantity
-decreaseButton.addEventListener('click', function() {
-  let quantity = parseInt(quantityInput.value);
-  if (quantity > 1) {
-    quantityInput.value = quantity - 1;
-  }
-});
-
-// Close modal if clicked outside (optional)
-window.addEventListener('click', function(event) {
+// When clicking outside the modal content, close it
+window.addEventListener('click', (event) => {
   if (event.target === modal) {
     modal.style.display = 'none';
   }
+});
+
+// Quantity Buttons
+let quantity = 1;
+const quantityInput = document.getElementById('quantity');
+const increaseQuantityBtn = document.getElementById('increaseQuantity');
+const decreaseQuantityBtn = document.getElementById('decreaseQuantity');
+
+increaseQuantityBtn.addEventListener('click', () => {
+  quantity++;
+  quantityInput.value = quantity;
+});
+
+decreaseQuantityBtn.addEventListener('click', () => {
+  if (quantity > 1) {
+    quantity--;
+    quantityInput.value = quantity;
+  }
+});
+
+// Handle Form Submission
+const pickupForm = document.getElementById('pickupForm');
+pickupForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent page refresh
+
+  const pickupDate = document.getElementById('pickupDate').value;
+  const pickupTime = document.getElementById('pickupTime').value;
+
+  // Validate time selection (must be between 9 AM and 6 PM)
+  const time = new Date(`2024-01-01T${pickupTime}`);
+  const startTime = new Date('2024-01-01T09:00');
+  const endTime = new Date('2024-01-01T18:00');
+  
+  if (time < startTime || time > endTime) {
+    alert('Pickup time must be between 9:00 AM and 6:00 PM.');
+    return;
+  }
+
+  // Generate Random Order Number (6 digits)
+  const orderNumber = Math.floor(100000 + Math.random() * 900000);
+
+  // Display Receipt
+  document.getElementById('orderNumber').textContent = orderNumber;
+  document.getElementById('receiptDate').textContent = pickupDate;
+  document.getElementById('receiptTime').textContent = pickupTime;
+  document.getElementById('receiptQuantity').textContent = quantity;
+  document.getElementById('receiptTotal').textContent = (quantity * 250).toFixed(2); // Assuming price is ₱250 per item
+
+  // Show the receipt and hide the form
+  document.getElementById('receipt').style.display = 'block';
+  pickupForm.style.display = 'none';
 });
