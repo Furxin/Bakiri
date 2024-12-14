@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deniel's Bakery Shop</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Fauna One' rel='stylesheet'>
-  
+  <link href="https://fonts.googleapis.com/css?family=Fauna+One&display=swap" rel="stylesheet">
+
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="stylesf.css">
 </head>
 <body>
+
   <!-- Navbar Section -->
   <header class="navbar">
     <a href="menu.html" class="back-button">&lt; Back to Menu</a>
@@ -25,15 +25,14 @@
   <main class="product-container">
     <!-- Left Side: Product Image -->
     <div class="product-image">
-      <img src="cake1.png" alt="Chocolate Cake">
+      <img src="cake1.png" alt="Chocolate Cake" />
     </div>
 
     <!-- Right Side: Product Details -->
     <div class="product-details">
       <h2 class="product-title">CHOCOLATE CAKE</h2>
       <p class="product-price">₱250</p>
-      
-      <!-- Dropdown Toggles -->
+
       <h3 class="toggle-title">Description +</h3>
       <p class="toggle-content" style="display: none;">
         This is a delicious chocolate cake with rich frosting.
@@ -43,11 +42,33 @@
       <p class="toggle-content" style="display: none;">
         Flour, eggs, cocoa powder, sugar, butter, and chocolate frosting.
       </p>
-      
-      <!-- Add to Cart Button -->
+
       <button id="AddToCart">+ Add to Cart</button>
     </div>
   </main>
+
+  <!-- Modal for Order Details -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Order Details</h2>
+      </div>
+      <div class="modal-body">
+        <p>Choose your pickup date and time:</p>
+        <input type="date" id="pickupDate" />
+        <input type="time" id="pickupTime" />
+        <p>Quantity:</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn" id="decreaseQuantity">-</button>
+          <div class="quantity-display" id="quantityDisplay">1</div>
+          <button class="quantity-btn" id="increaseQuantity">+</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="submitOrder">Submit Order</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer Section -->
   <footer>
@@ -56,31 +77,6 @@
 
   <!-- Add JavaScript -->
   <script src="scriptf.js"></script>
-
-   <!-- Modal for Cart -->
-  <div id="cartModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Customize Your Order</h2>
-      </div>
-      <div class="modal-body">
-        <p>Pick your pickup date and time</p>
-        <input type="date" id="pickupDate" required>
-        <input type="time" id="pickupTime" required>
-        
-        <div class="quantity-controls">
-          <button class="quantity-btn" id="decreaseQuantity">-</button>
-          <input type="text" id="quantity" class="quantity-display" value="1" readonly>
-          <button class="quantity-btn" id="increaseQuantity">+</button>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button id="confirmOrder" class="quantity-btn">Confirm Order</button>
-      </div>
-    </div>
-  </div>
-
-  
 </body>
 </html>
 
