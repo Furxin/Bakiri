@@ -54,29 +54,34 @@ body {
 /* Product Container */
 .product-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align content to left */
+  align-items: center;
   margin-top: 100px; /* To offset from navbar */
   padding: 20px;
   background-color: #fff; /* Main content background set to white */
+  max-width: 1200px;
+  margin: 100px auto 0; /* Center container and add margin at the top */
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Left Side: Product Image */
 .product-image {
   flex: 1;
   padding: 20px;
-  border: 2px solid #f8be49;
-  border-radius: 15px;
-  margin-right: 20px;
   text-align: center;
   box-sizing: border-box;
+  border-radius: 15px;
 }
 
 .product-image img {
   max-width: 100%;
   border-radius: 15px;
-  border: 2px solid #f8be49; /* The image itself now has a border */
-  padding: 5px; /* Ensure padding is inside the border */
-  box-sizing: border-box; /* Ensures padding doesn't push border out */
+  border: 2px solid #f8be49; /* Image border color */
+  padding: 5px;
+  box-sizing: border-box;
+  max-height: 400px; /* Adjust image height */
+  object-fit: contain; /* Ensure image fits inside its container */
 }
 
 /* Right Side: Product Details */
@@ -87,6 +92,7 @@ body {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
 }
 
 .product-details .product-title {
