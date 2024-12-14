@@ -181,9 +181,13 @@ html, body {
   margin: 0;
 }
 
+/* Footer styles */
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  background-color: #272e22;
+  color: #f8be49;
+  text-align: center;
+  padding: 20px;
+  font-size: 1em;
+  margin-top: 50px; /* Keeps some space between footer and main content */
+  position: relative;
 }
-
