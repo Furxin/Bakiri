@@ -457,8 +457,8 @@ html, body {
   }
   /* Footer Section */
 .footer {
-  background-color: #f8f8f8; /* Light background to match the header's neutral tone */
-  color: #333333; /* Dark text for better contrast */
+  background-color: #76889d; /* Light background to match the header's neutral tone */
+  color: #ffffff; /* Dark text for better contrast */
   padding: 40px 30px;
   display: flex;
   justify-content: center; /* Centers the content */
@@ -489,7 +489,7 @@ html, body {
 }
 
 .footer-logo h2 {
-  font-family: 'Playfair Display', serif; /* Elegant font to match the header logo */
+  font-family: 'Cinzel Decorative', serif; /* Elegant font to match the header logo */
   font-size: 2.5em;
   color: #333333; /* Dark text for better visibility */
   margin: 0;
@@ -503,7 +503,7 @@ html, body {
 }
 
 .get-in-touch h3 {
-  color: #FD8B51; /* Warm orange color from the header */
+  color: #f8be49; /* Warm orange color from the header */
   font-size: 1.3em;
   margin-bottom: 15px;
 }
@@ -547,13 +547,13 @@ html, body {
 }
 
 .quick-links h3 {
-  color: #FD8B51; /* Matching the header's color scheme */
+  color: #f8be49; /* Matching the header's color scheme */
   font-size: 1.3em;
   margin-bottom: 15px;
 }
 
 .quick-links a {
-  color: #333333; /* Dark color for contrast */
+  color: #ffffff; /* Dark color for contrast */
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
@@ -572,7 +572,7 @@ html, body {
 }
 
 .newsletter h3 {
-  color: #FD8B51; /* Warm color for consistency with the header */
+  color: #f8be49; /* Warm color for consistency with the header */
   font-size: 1.3em;
   margin-bottom: 15px;
 }
@@ -594,7 +594,7 @@ html, body {
 .newsletter button {
   padding: 10px 20px;
   font-size: 1em;
-  background-color: #FD8B51; /* Matches the header color */
+  background-color: #76889d; /* Matches the header color */
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -603,7 +603,7 @@ html, body {
 }
 
 .newsletter button:hover {
-  background-color: #f4a261; /* Slightly lighter orange for hover effect */
+  background-color: #f8be49; /* Slightly lighter orange for hover effect */
 }
 
 /* Media Queries for Responsiveness */
