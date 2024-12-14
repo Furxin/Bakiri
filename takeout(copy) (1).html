@@ -56,6 +56,31 @@
 
   <!-- Add JavaScript -->
   <script src="scriptf.js"></script>
+
+   <!-- Modal for Cart -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Customize Your Order</h2>
+      </div>
+      <div class="modal-body">
+        <p>Pick your pickup date and time</p>
+        <input type="date" id="pickupDate" required>
+        <input type="time" id="pickupTime" required>
+        
+        <div class="quantity-controls">
+          <button class="quantity-btn" id="decreaseQuantity">-</button>
+          <input type="text" id="quantity" class="quantity-display" value="1" readonly>
+          <button class="quantity-btn" id="increaseQuantity">+</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="confirmOrder" class="quantity-btn">Confirm Order</button>
+      </div>
+    </div>
+  </div>
+
+  
 </body>
 </html>
 
