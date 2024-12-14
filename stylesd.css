@@ -94,7 +94,7 @@ html, body {
   .services-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: #C1D8C3;
+    background-color: #ffffff;
     color: #333;
     box-shadow: inset 0 6px 15px rgba(219, 109, 14, 0.4); 
   }
@@ -120,7 +120,7 @@ html, body {
   
   .awards-section {
     padding: 60px 20px;
-    background-color: #C1D8C3;
+    background-color: #ffffff;
     text-align: center;
     box-shadow: inset 0 6px 15px rgba(0, 0, 0, 0.4); 
   }
