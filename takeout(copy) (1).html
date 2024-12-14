@@ -46,21 +46,42 @@
     </div>
   </main>
 
-<!-- Modal Structure -->
-<div class="modal" id="orderModal">
+<!-- Modal for Add to Cart -->
+<div id="orderModal" class="modal">
   <div class="modal-content">
-    <h3>Order Details</h3>
-    <p><strong>Chocolate Cake</strong></p>
-    <p>Price: ₱250</p>
-    <label for="pickupTime">Pick-up Time:</label>
-    <input type="time" id="pickupTime" name="pickupTime" min="06:00" max="18:00" required>
-    <label for="quantity">Quantity:</label>
-    <div class="quantity-controls">
-      <button id="decrease" class="quantity-btn">-</button>
-      <input type="number" id="quantity" value="1" min="1" readonly>
-      <button id="increase" class="quantity-btn">+</button>
+    <span class="close" id="closeModal">&times;</span>
+    
+    <h2>Enter Pickup Details</h2>
+
+    <form id="pickupForm">
+      <!-- Date picker -->
+      <label for="pickupDate">Select Pickup Date:</label>
+      <input type="date" id="pickupDate" name="pickupDate" required>
+
+      <!-- Time picker (restricted to 9 AM to 6 PM) -->
+      <label for="pickupTime">Select Pickup Time:</label>
+      <input type="time" id="pickupTime" name="pickupTime" required min="09:00" max="18:00">
+
+      <!-- Quantity Buttons -->
+      <label for="quantity">Quantity:</label>
+      <div class="quantity-container">
+        <button type="button" id="decreaseQuantity" class="quantity-btn">-</button>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" readonly>
+        <button type="button" id="increaseQuantity" class="quantity-btn">+</button>
+      </div>
+      
+      <!-- Submit Order Button -->
+      <button type="submit" id="submitOrder">Submit Order</button>
+    </form>
+
+    <div id="receipt" class="receipt" style="display: none;">
+      <h3>Receipt</h3>
+      <p>Order Number: <span id="orderNumber"></span></p>
+      <p>Pickup Date: <span id="receiptDate"></span></p>
+      <p>Pickup Time: <span id="receiptTime"></span></p>
+      <p>Quantity: <span id="receiptQuantity"></span></p>
+      <p>Total: ₱<span id="receiptTotal"></span></p>
     </div>
-    <button id="submitOrder">Submit Order</button>
   </div>
 </div>
 
