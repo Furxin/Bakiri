@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   justify-content: space-between; /* Ensures footer stays at the bottom */
   min-height: 100vh; /* Full height of the viewport */
+  overflow-x: hidden; 
 }
 
 /* Navbar */
