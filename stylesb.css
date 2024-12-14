@@ -214,7 +214,7 @@ h2 {
 
 .menu-item button {
   padding: 10px 15px;
-  background-color: #76889d;
+  background-color: #a4b5c5;
   color: white;
   border: none;
   border-radius: 5px;
@@ -223,6 +223,7 @@ h2 {
 }
 
 .menu-item a{
+  color: #272e22;
   text-decoration: none;
 }
 
