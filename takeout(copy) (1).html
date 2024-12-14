@@ -46,18 +46,24 @@
     </div>
   </main>
 
-  <!-- Modal for Order -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Enter Pickup Information</h2>
-      <label for="pickupDate">Pickup Date:</label>
-      <input type="date" id="pickupDate">
-      <label for="pickupTime">Pickup Time:</label>
-      <input type="time" id="pickupTime">
-      <button id="submitOrder" class="submit-btn">Submit Order</button>
+<!-- Modal Structure -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <h3>Order Details</h3>
+    <p><strong>Chocolate Cake</strong></p>
+    <p>Price: ₱250</p>
+    <label for="pickupTime">Pick-up Time:</label>
+    <input type="time" id="pickupTime" name="pickupTime" min="06:00" max="18:00" required>
+    <label for="quantity">Quantity:</label>
+    <div class="quantity-controls">
+      <button id="decrease" class="quantity-btn">-</button>
+      <input type="number" id="quantity" value="1" min="1" readonly>
+      <button id="increase" class="quantity-btn">+</button>
     </div>
+    <button id="submitOrder">Submit Order</button>
   </div>
+</div>
+
 
   <!-- Footer Section -->
   <footer>
