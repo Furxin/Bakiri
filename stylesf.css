@@ -14,10 +14,49 @@ body {
   margin: 0;
   padding: 100px 0 20px 0; 
 }
-  .sides{
-    display: flex;
-    margin-top: 120px;
-  }
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8be49;
+  padding: 10px 20px;
+}
+
+.header .back-button {
+  background-color: #e9963c;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header .back-button:hover {
+  background-color: #a4b5c5;
+}
+
+.header .bakery-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 24px;
+  color: #272e22;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.header .spacer {
+  width: 100px; /* Ensures space for alignment */
+}
+
+/* Main Content */
+.sides {
+  display: flex;
+  margin-top: 120px;
+}
 
 .leftside {
   width: 50%;
@@ -25,28 +64,27 @@ body {
   height: 100vh;
 }
 
-.leftside img{
+.leftside img {
   position: absolute;
   right: 0;
   padding-right: 20px;
   border: beige dotted;
   height: 75%;
-  width: 75%
+  width: 75%;
 }
 
 .rightside {
-  height: auto;
   width: 50%;
   height: 100vh;
   position: relative;
 }
 
-.rightside h1{
+.rightside h1 {
   padding-left: 30px;
   text-align: start;
 }
 
-.rightside h2{
+.rightside h2 {
   padding-left: 30px;
   text-align: start;
   line-height: -10;
@@ -57,18 +95,18 @@ body {
   text-align: start;
 }
 
-.Wrapper{
+/* Wrapper for Quantity Selector */
+.Wrapper {
   position: absolute;
   right: 0;
   height: 70px;
   width: 200px;
   border: #333 solid;
-  border-radius: 13px ;
+  border-radius: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
 }
 
 .Wrapper span {
@@ -78,17 +116,17 @@ body {
   font-weight: 500;
 }
 
-.Wrapper span.num{
+.Wrapper span.num {
   font-size: 50px;
-  border-right: 2px solid rgba(0,0,0,0.2);
-  border-left: 2px solid rgba(0,0,0,0.2);
-
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
 }
 
+/* Add to Cart Button */
 #AddToCart {
   text-align: center;
   text-decoration: none;
-  background-color: rgb(75, 146, 187);
+  background-color: #76889d;
   color: white;
   font-size: 3.0em;
   border: solid rgb(105, 146, 207);
@@ -99,4 +137,10 @@ body {
   bottom: 0;
   transform: translateX(-50%);
   border-radius: 20px;
+  transition: background-color 0.3s ease;
 }
+
+#AddToCart:hover {
+  background-color: #272e22;
+}
+
