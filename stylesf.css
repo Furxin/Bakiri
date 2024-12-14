@@ -102,87 +102,78 @@ header .bakery-name {
   width: 100%;
 }
 
-/* Modal styles */
+/* Modal Styling */
 .modal {
+  display: none; /* Hide by default */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 30px;
-  width: 80%;
-  max-width: 500px;
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  display: none;
-  z-index: 1001;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 
-.modal input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+.modal-content h3 {
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  color: #272e22;
+}
+
+.modal-content p {
+  text-align: center;
+  color: #76889d;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.quantity-btn {
+  font-size: 1.5rem;
+  padding: 5px 15px;
+  background-color: #f8be49;
+  border: 1px solid #e9963c;
+  color: white;
+  cursor: pointer;
   border-radius: 5px;
 }
 
-.modal button {
-  background-color: #f8be49; /* Color from palette */
-  color: white;
-  padding: 15px;
-  font-size: 1.5em;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
+.quantity-btn:hover {
+  background-color: #e9963c;
 }
 
-.modal button:disabled {
-  background-color: #ccc;
-}
-
-/* Footer */
-footer {
+#quantity {
+  width: 50px;
   text-align: center;
-  padding: 20px;
-  background-color: #f8be49; /* Color from palette */
-  color: white;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-top: 20px;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  border: 1px solid #76889d;
+  padding: 5px;
 }
 
-/* Submit Order Button */
-.submit-order-btn {
-  background-color: #e9963c; /* Color from palette */
+#submitOrder {
+  background-color: #f8be49;
   color: white;
-  padding: 15px;
-  font-size: 1.5em;
+  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 5px;
   width: 100%;
+  cursor: pointer;
+  font-size: 1.2rem;
   margin-top: 20px;
 }
 
-.submit-order-btn:hover {
-  background-color: #76889d; /* Color from palette */
+#submitOrder:hover {
+  background-color: #e9963c;
 }
 
-/* Modal Background (when it's open) */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 1000;
-}
 
 /* Make sure the footer always stays at the bottom */
 html, body {
