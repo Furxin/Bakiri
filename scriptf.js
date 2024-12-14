@@ -1,41 +1,54 @@
-// Highlight the current navigation link
-document.addEventListener('DOMContentLoaded', () => {
-    // Get all navigation links
-    const navLinks = document.querySelectorAll('.topnav a');
-  
-    // Get the current page's file name
-    const currentPage = window.location.pathname.split('/').pop();
-  
-    // Loop through links to find the matching one
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
+  // Select all toggle titles
+  const toggleTitles = document.querySelectorAll('.toggle-title');
+
+  toggleTitles.forEach(title => {
+    title.addEventListener('click', () => {
+      // Find the next sibling element (toggle-content)
+      const content = title.nextElementSibling;
+
+      // Toggle the 'active' class and show/hide content
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
       } else {
-        link.classList.remove('active');
+        content.style.display = 'block';
       }
     });
   });
 
-const plus = document.querySelector(".plus"),
-        minus = document.querySelector(".minus"),
-         num = document.querySelector(".num");
+// Function to generate a random 6-digit order number
+  function generateOrderNumber() {
+    return Math.floor(100000 + Math.random() * 900000); // Ensures a 6-digit number
+  }
 
-         let a = 1;
+  // Function to handle the 'Add to Cart' process
+  document.getElementById('AddToCart').addEventListener('click', () => {
+    // Prompt for details
+    const pickupDate = prompt('Enter the pickup date (YYYY-MM-DD):');
+    const pickupTime = prompt('Enter the pickup time (e.g., 14:00 for 2 PM):');
+    const quantity = prompt('Enter the quantity of the item:');
 
-         plus.addEventListener("click", ()=> {
-          a++;
-          num.innerHTML = a;
-          a = (a<100) ? "0" + a:a;
-         });
+    // Validate input
+    if (!pickupDate || !pickupTime || isNaN(quantity) || quantity <= 0) {
+      alert('Invalid input. Please try again and enter correct details.');
+      return;
+    }
 
-         minus.addEventListener("click", ()=> {
-          a--;
-          num.innerHTML = a;
-          a = (a<100) ? "0" + a:a;
-         });
-  
-const btn = document.getElementById("AddToCart");
+    // Item price and calculation
+    const itemPrice = 250; // Set price of one item
+    const totalAmount = itemPrice * parseInt(quantity);
 
-btn.addEventListener("click", ()=> {
-  alert("Items are added in the cart!");
-});
+    // Generate a random 6-digit order number
+    const orderNumber = generateOrderNumber();
+
+    // Display the receipt in an alert box
+    alert(
+      `--- Receipt ---\n` +
+      `Order Number: ${orderNumber}\n` +
+      `Item: Chocolate Cake\n` +
+      `Quantity: ${quantity}\n` +
+      `Pickup Date: ${pickupDate}\n` +
+      `Pickup Time: ${pickupTime}\n` +
+      `Total Amount: ₱${totalAmount}\n\n` +
+      `Thank you for ordering at Deniel's Bakery Shop!`
+    );
+  });
