@@ -133,3 +133,69 @@ footer {
   width: 100%;
 }
 
+.modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .modal-header {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .modal-body {
+      text-align: center;
+    }
+
+    .quantity-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .quantity-btn {
+      font-size: 24px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      background-color: #f8be49;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .quantity-btn:hover {
+      background-color: #e9963c;
+    }
+
+    .quantity-display {
+      font-size: 24px;
+      padding: 10px;
+      width: 50px;
+      text-align: center;
+    }
+
+    .modal-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
