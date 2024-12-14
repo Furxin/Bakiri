@@ -1,12 +1,18 @@
-  // Select all toggle titles
+// Function to generate a random 6-digit order number
+function generateOrderNumber() {
+  return Math.floor(100000 + Math.random() * 900000);
+}
+
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Dropdown Toggle Functionality ---
   const toggleTitles = document.querySelectorAll('.toggle-title');
 
   toggleTitles.forEach(title => {
     title.addEventListener('click', () => {
-      // Find the next sibling element (toggle-content)
       const content = title.nextElementSibling;
 
-      // Toggle the 'active' class and show/hide content
+      // Toggle the visibility of the content
       if (content.style.display === 'block') {
         content.style.display = 'none';
       } else {
@@ -15,40 +21,40 @@
     });
   });
 
-// Function to generate a random 6-digit order number
-  function generateOrderNumber() {
-    return Math.floor(100000 + Math.random() * 900000); // Ensures a 6-digit number
-  }
+  // --- Add to Cart Functionality ---
+  const addToCartButton = document.getElementById('AddToCart');
 
-  // Function to handle the 'Add to Cart' process
-  document.getElementById('AddToCart').addEventListener('click', () => {
-    // Prompt for details
+  addToCartButton.addEventListener('click', () => {
     const pickupDate = prompt('Enter the pickup date (YYYY-MM-DD):');
     const pickupTime = prompt('Enter the pickup time (e.g., 14:00 for 2 PM):');
     const quantity = prompt('Enter the quantity of the item:');
 
-    // Validate input
+    // Validate user input
     if (!pickupDate || !pickupTime || isNaN(quantity) || quantity <= 0) {
       alert('Invalid input. Please try again and enter correct details.');
       return;
     }
 
-    // Item price and calculation
-    const itemPrice = 250; // Set price of one item
+    // Calculate total amount
+    const itemPrice = 250; // Price per item
     const totalAmount = itemPrice * parseInt(quantity);
 
-    // Generate a random 6-digit order number
+    // Generate a random order number
     const orderNumber = generateOrderNumber();
 
-    // Display the receipt in an alert box
-    alert(
-      `--- Receipt ---\n` +
-      `Order Number: ${orderNumber}\n` +
-      `Item: Chocolate Cake\n` +
-      `Quantity: ${quantity}\n` +
-      `Pickup Date: ${pickupDate}\n` +
-      `Pickup Time: ${pickupTime}\n` +
-      `Total Amount: ₱${totalAmount}\n\n` +
-      `Thank you for ordering at Deniel's Bakery Shop!`
-    );
+    // Display a detailed receipt
+    const receipt = `
+      --- Receipt ---
+      Order Number: ${orderNumber}
+      Item: Chocolate Cake
+      Quantity: ${quantity}
+      Pickup Date: ${pickupDate}
+      Pickup Time: ${pickupTime}
+      Total Amount: ₱${totalAmount}
+
+      Thank you for ordering at Deniel's Bakery Shop!
+    `;
+
+    alert(receipt);
   });
+});
