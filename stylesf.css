@@ -106,7 +106,7 @@ body {
 
 
 /* Add to Cart Button */
-.AddToCart {
+#AddToCart {
   background-color: #76889d;
   color: white;
   font-size: 18px;
@@ -117,7 +117,7 @@ body {
   margin-top: 10px;
 }
 
-.AddToCart:hover {
+#AddToCart:hover {
   background-color: #272e22;
 }
 
